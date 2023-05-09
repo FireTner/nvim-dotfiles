@@ -7,7 +7,7 @@ vim.wo.relativenumber = true
 vim.opt.cmdheight = 0
 vim.opt.laststatus = 3
 
-vim.opt.clipboard = unnamedplus
+vim.opt.clipboard:append({ 'unnamed', 'unnamedplus' })
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
@@ -25,5 +25,5 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(require("plugins"), {
-   install = { colorscheme = { "tokyonight" } }
+   install = { colorscheme = { "tokyonight" } },
 })
